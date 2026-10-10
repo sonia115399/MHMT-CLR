@@ -1,0 +1,18 @@
+{
+  "seeds": [21, 42, 123, 1568, 3407],
+  "pretrain": {
+    "net": {"epochs": 100, "batch_size": 32, "learning_rate": 0.001, "weight_decay": 0.0, "optimizer": "Adam", "schedule": "constant", "provenance": "epochs_from_paper_other_settings_from_original_code_run"},
+    "clr": {"epochs": 1000, "batch_size": 64, "learning_rate": 0.0003, "weight_decay": 0.0001, "temperature": 0.05, "optimizer": "Adam", "schedule": "cosine_epochs"}
+  },
+  "downstream": {"batch_size": 32, "weight_decay": 0.0001, "step_size": 15, "gamma": 0.85},
+  "species": {
+    "corn": {"epochs": 50, "learning_rate": 0.001},
+    "datepalm": {"epochs": 40, "learning_rate": 0.0008},
+    "tea": {"epochs": 45, "learning_rate": 0.0005}
+  },
+  "split_counts": {
+    "corn": {"Corn___Common_Rust": [1220, 305, 382], "Corn___Gray_Leaf_Spot": [1050, 263, 329], "Corn___Healthy": [1190, 297, 372], "Corn___Leaf_Blight": [1221, 305, 382]},
+    "datepalm": {"brown spots": [256, 64, 80], "healthy": [256, 64, 80], "white scale": [256, 64, 80]},
+    "tea": {"Anthracnose": [64, 16, 20], "algal leaf": [72, 18, 23], "bird eye spot": [64, 16, 20], "brown blight": [72, 18, 23], "gray light": [64, 16, 20], "healthy": [47, 12, 15], "red leaf spot": [91, 23, 29], "white spot": [90, 23, 29]}
+  }
+}
